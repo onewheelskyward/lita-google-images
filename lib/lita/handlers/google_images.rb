@@ -29,7 +29,7 @@ module Lita
           rsz: 8
         )
 
-        data = MultiJson.load(http_response.body)
+        data = JSON.parse(http_response.body)
 
         if data["responseStatus"] == 200
           choice = data["responseData"]["results"].sample
